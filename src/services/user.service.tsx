@@ -3,7 +3,7 @@ import authHeader from "./authHeader";
 import { IUser } from "../types/user.type";
 import { CommentDTO, UserDTO } from "../types/dtos.type";
 
-const API_URL = "http://localhost:4000/";
+const API_URL = process.env.API_URL || "http://localhost:4000/api/";
 
 export const getUserList = () => {
   return axios.get<IUser[]>(API_URL, { headers: authHeader() });

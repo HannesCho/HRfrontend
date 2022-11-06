@@ -4,7 +4,7 @@ import { IUser } from "../types/user.type";
 import { CreateUserDTO, EmployeeDTO, LoginResponse } from "../types/dtos.type";
 import { IEmployee } from "../types/employee.type";
 
-const API_URL = "http://localhost:4000/";
+const API_URL = process.env.API_URL || "http://localhost:4000/api/";
 
 export const createUser = async function (dto: CreateUserDTO) {
   try {
